@@ -2,7 +2,7 @@
 import Data.List
 integerSqrt = floor . sqrt . fromIntegral
 properFactors :: Integer -> [Integer]
-properFactors n = sort ([1] ++ concat [[x, y] | x <- [2 .. integerSqrt n], n > 0, n `mod` x == 0, y <- [n `div` x], y /= n])
+properFactors n = sort ([1] ++ concat [[x, y] | x <- [2 .. integerSqrt n], n > 0, n `mod` x == 0, y <- [n `div` x]])
 
 -- Calculate perfect number
 perfectNum :: Integer -> Bool
