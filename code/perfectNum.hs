@@ -1,6 +1,8 @@
 -- Calculate proper factors
+import Data.List
+integerSqrt = floor . sqrt . fromIntegral
 properFactors :: Integer -> [Integer]
-properFactors n = [x | x <- [1 .. n - 1], n > 0, n `mod` x == 0]
+properFactors n = sort ([1] ++ concat [[x, y] | x <- [2 .. integerSqrt n], n > 0, n `mod` x == 0, y <- [n `div` x], y /= n])
 
 -- Calculate perfect number
 perfectNum :: Integer -> Bool
