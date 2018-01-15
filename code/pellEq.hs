@@ -1,3 +1,4 @@
+-- calculate pell equation which satisfies x ^ 2 - 2 * y ^ 2 = 1/(-1)
 pellEq :: Integer -> (Integer, Integer)
 pellEq n 
     | n <= 0 = (0, 0)
